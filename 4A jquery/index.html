@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<!-- Home Page -->
+<div data-role="page" id="home">
+    <div data-role="header">
+        <h1>Welcome</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+        <h2>Mobile Website</h2>
+        <p>This is a simple mobile website using jQuery Mobile.</p>
+        <a href="#myPanel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-left">Open Panel</a>
+        <div data-role="controlgroup" data-type="horizontal">
+            <a href="#myDialog" class="ui-btn">Open Dialog</a>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <label for="slider">Slider:</label>
+            </div>
+            <div role="main" class="ui-content"> 
+                <label for="slider">Input slider:</label> 
+                <input type="range" name="slider" 
+                    id="GFG" min="0" max="100" value="30"> 
+            </div> 
+        </div>
+        <a href="#page2" class="ui-btn">Go to Page 2</a>
+    </div>
+</div>
+
+<!-- Panel -->
+<div data-role="panel" id="myPanel">
+    <h2>Menu</h2>
+    <ul data-role="listview">
+        <li><a href="#" data-rel="close">Close Panel</a></li>
+        <li><a href="#home" data-transition="slide">Home</a></li>
+        <li><a href="#page2" data-transition="slide">Page 2</a></li>
+    </ul>
+</div>
+
+<!-- Dialog -->
+<div data-role="dialog" id="myDialog">
+    <div data-role="header">
+        <h2>Dialog</h2>
+    </div>
+    <div role="main" class="ui-content">
+        <p>This is a dialog.</p>
+        <a href="#" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left" data-rel="back">Close</a>
+    </div>
+</div>
+
+<!-- Page 2 -->
+<div data-role="page" id="page2">
+    <div data-role="header">
+        <h1>Page 2</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+        <p>This is Page 2.</p>
+        <a href="#home" class="ui-btn">Go back to Home</a>
+    </div>
+</div>
+
+<script>
+    // Event handling
+    $(document).ready(function () { 
+                $("#GFG").slider({ 
+                    start: function (event, ui) { 
+                        alert("Slider value changed to: " + $(this).val());
+                    } 
+                }); 
+            }); 
+</script>
+
+</body>
+</html>
