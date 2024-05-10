@@ -1,0 +1,105 @@
+<!DOCTYPE html>  <!--document type and version of HTML being used, in this case, HTML5. -->
+
+<html lang="en">   <!-- opening of the HTML document and specifies the language of the document, which is English ("en").-->
+<head>  <!--marks the beginning of the head section contains meta-information about the document, such as its title, character encoding, and links to external resources-->
+    <meta charset="UTF-8"> <!--character encoding for the document, which is UTF-8. UTF-8 is a character encoding capable of encoding all possible characters....Unicode Transformation Format 8-bit -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--viewport properties for responsive web design. It tells the browser to set the width of the page to the width of the device screen and to set the initial zoom level to 1.0 (i.e., no zoom).-->
+    <title>Bootstrap Sidebar</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        .sidebar {
+            position: fixed;  /*position: fixed; is used to position an element relative to the viewport, meaning it will always stay in the same place even if the page is scrolled. */
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            background-color: #343a40;
+            padding-top: 60px;
+            /* Adjust according to your navbar height */
+        }
+
+        .sidebar .nav-link {
+            color: #fff;
+        }
+
+        .content {
+            margin-left: 250px;
+            /* Adjust according to your sidebar width */
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <ul class="nav flex-column nav-tabs"> <!-- justify-content-end: -->
+            <!-- <nav class="nav flex-column">
+            <a class="nav-link active" aria-current="page" href="#">Active</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </nav> 
+            without ul-->
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Profile</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Page content -->
+    <div class="col content">   <!--what is div: This tag is a block-level element used to create divisions or sections in an HTML document. It's typically used to group and structure content, allowing you to apply CSS styles, scripts, or layout changes to multiple elements as a single unit. -->
+        <h2>Dashboard</h2>  <!--span  This tag is an inline element used to apply styles or manipulate specific parts of text within a larger block of content. -->
+        <div class="row">
+            <!-- Statistics cards -->
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Orders</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">1250</h6>
+                        <a href="#" class="card-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Products</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">450</h6>
+                        <a href="#" class="card-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Customers</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">800</h6>
+                        <a href="#" class="card-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4"> <!--mt is margin top-->
+            <div class="col-md-12"> <!--col-md-, you can specify how many columns a particular element should span at medium screen sizes.-->
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip"
+                    data-placement="bottom" title="tthis is tooltip">Tooltip</button>
+                <button type="button" class="btn btn-primary">
+                    Inbox <span class="badge bg-danger">4</span>
+                    </button>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
